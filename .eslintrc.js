@@ -24,7 +24,7 @@ module.exports = {
     plugins: ["react", "@typescript-eslint"],
     rules: {
         "no-mixed-operators": "error",
-        // "max-len": ["error", { code: 80, ignoreUrls: true }],
+        "max-len": ["error", { code: 80, ignoreUrls: true }],
         "import/prefer-default-export": "off",
         "react/jsx-filename-extension": [1, { extensions: [".tsx", ".ts"] }],
         "react/require-default-props": "off",
