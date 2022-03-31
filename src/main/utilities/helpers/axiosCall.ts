@@ -4,7 +4,7 @@ import axios, {
   AxiosRequestHeaders,
   AxiosResponse,
 } from "axios";
-import { ForAxiosDefs } from "../../commonTypes";
+import { ForAxiosDefs } from "../../types";
 
 interface AxiosProps {
   path: string;
@@ -27,11 +27,6 @@ interface ReturnAxiosDef extends AxiosResponse {
 function LocalErrorHandler(message: string | {}) {
   return message;
 }
-
-// interface HeaderType {
-//   Authorization?: string;
-//   "Content-Type": string;
-// }
 
 export const axiosCall = async (props: AxiosProps) => {
   const headers: AxiosRequestHeaders = {

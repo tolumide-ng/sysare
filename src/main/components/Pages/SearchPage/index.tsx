@@ -5,7 +5,7 @@ import style from "./index.module.css";
 
 export const Search = () => {
     const {search} = useParams();
-    const {text, setText} = useSearch();
+    const {} = useSearch();
     console.log("the search params");
     return (
         <article className="ldpg">

@@ -1,7 +1,7 @@
 import { Action } from "redux";
 import { ThunkAction } from "redux-thunk";
 import { RootStateDef } from ".";
-import { ForAxiosDefs } from "../../commonTypes";
+import { ForAxiosDefs } from "../../types";
 
 export interface RootState {
     dropDownReducer: {

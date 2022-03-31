@@ -1,4 +1,4 @@
-import { TStatus } from "../../../commonTypes";
+import { TStatus } from "../../../types";
 import {FETCH_SEARCH_PENDING, FETCH_SEARCH_FAILURE, FETCH_SEARCH_SUCCESS} from "./actionTypes";
 
 export interface IFetchSearchState {

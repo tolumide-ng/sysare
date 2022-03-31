@@ -30,5 +30,9 @@ module.exports = {
         "react/require-default-props": "off",
         "function-component-definition": 0,
         "react/destructuring-assignment": 0,
+        'prettier/prettier': [
+            'error',
+            { singleQuote: false },
+        ],
     },
 };

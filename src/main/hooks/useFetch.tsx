@@ -1,4 +1,4 @@
-import { ForAxiosDefs } from "../commonTypes";
+import { ForAxiosDefs } from "../types";
 import { IStoreActionProps } from "../store/modules/types";
 
 interface IProps {
