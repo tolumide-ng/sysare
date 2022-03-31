@@ -1,8 +1,8 @@
 import React, { Suspense } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Route, Routes } from "react-router";
+import { Route, Routes, } from "react-router";
 import ErrorBoundary from "../../components/Pages/ErrorBoundary";
-import { LandingPage } from "../../components/Pages/LandingPage";
+import { Search } from "../../components/Pages/SearchPage";
 import { LoadingPage } from "../../components/Pages/LoadingPage";
 import { setDropDownAction } from "../../store/modules/dropDown/actions";
 import { RootState } from "../../store/modules/types";
@@ -27,7 +27,7 @@ const AppRouter = () => {
                 <ErrorBoundary>
                     <Suspense fallback={<LoadingPage />}>
                         <Routes>
-                            <Route path="/" element={LandingPage} />
+                            <Route path="/" element={<Search />} />
                             {/* <Route path="/" /> */}
                         </Routes>
                     </Suspense>
