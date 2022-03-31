@@ -2,11 +2,13 @@ import { Action } from "redux";
 import { ThunkAction } from "redux-thunk";
 import { RootStateDef } from ".";
 import { ForAxiosDefs } from "../../types";
+import { IFetchSearchState } from "./search/types";
 
 export interface RootState {
     dropDownReducer: {
         display: boolean;
     };
+    fetchSearchReducer: IFetchSearchState;
 }
 
 export interface IStoreActionProps {
