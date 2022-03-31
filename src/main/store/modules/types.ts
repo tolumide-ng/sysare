@@ -9,7 +9,7 @@ export interface RootState {
     };
 }
 
-export interface StoreActionPropsDefs {
+export interface IStoreActionProps {
     path: string;
     payload: {};
     method: ForAxiosDefs;

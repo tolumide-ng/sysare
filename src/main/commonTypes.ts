@@ -18,3 +18,6 @@ export type ForAxiosDefs =
     | "unlink"
     | "UNLINK"
     | undefined;
+
+
+export type TStatus = "rest" | "pending" | "failure" | "success";

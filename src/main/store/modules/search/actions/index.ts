@@ -1,5 +1,5 @@
 import { axiosCall } from "../../../../utilities/helpers/axiosCall";
-import { AppThunk, StoreActionPropsDefs } from "../../types";
+import { AppThunk, IStoreActionProps } from "../../types";
 import { FETCH_SEARCH_FAILURE, FETCH_SEARCH_PENDING, FETCH_SEARCH_SUCCESS } from "../actionTypes";
 
 export const fetchSearchPending = () => ({
@@ -32,7 +32,7 @@ export const fetchSearchSuccess = (result: []) => ({
 });
 
 
-export const fetchSearchAction = (props: StoreActionPropsDefs): AppThunk => async (dispatch) => {
+export const fetchSearchAction = (props: IStoreActionProps): AppThunk => async (dispatch) => {
     try {
         dispatch(fetchSearchPending());
         const response = await axiosCall(props);
