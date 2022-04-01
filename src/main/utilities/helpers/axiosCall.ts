@@ -35,8 +35,6 @@ export const axiosCall = async (props: AxiosProps) => {
 
   const url = `${process.env.BASE_URL}${props.path}`;
 
-  console.log("THE URL WE'RE MAKING THE REQUEST>>>>>>>||||||||||||||", url);
-
   const axiosData: Config = {
     method: props.method,
     data: props.payload,
@@ -44,6 +42,7 @@ export const axiosCall = async (props: AxiosProps) => {
     json: true,
     url,
     headers,
+    // withCredentials: false,
   };
 
   try {

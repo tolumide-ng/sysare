@@ -29,7 +29,7 @@ export const useSearch = () => {
             dispatch,
             request: fetchSearchAction,
             method: "GET",
-            path: "",
+            path: "/search",
             payload: {},
             params: {
                 length: 30,
