@@ -23,7 +23,10 @@ export type ForAxiosDefs =
 export type TStatus = "rest" | "loading" | "failure" | "success";
 export interface IUserSummary {
     id: string;
+    is_plus: boolean;
+    last_login: string;
     name: string;
+    online_status: string;
     picture: {
         comment: string;
         url: string;
