@@ -5,7 +5,7 @@ interface IProps {
     intersectionRatio: number;
 }
 
-export const useIntersectionObserver = (ancestorElem: Element) => {
+export const useIntersectionObserver = (ancestorElem?: Element) => {
     const [converge, setConverge] = React.useState(false);
 
     React.useEffect(() => {}, [converge]);

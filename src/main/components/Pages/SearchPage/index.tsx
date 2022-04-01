@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useParams } from "react-router";
 import { BasicUser } from "../../UI/organisms/BasicUser";
 import { useSearch } from "./index.hook";
 import style from "./index.module.css";
