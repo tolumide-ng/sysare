@@ -1,0 +1,9 @@
+.up {
+    --up-mt: 0rem;
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--up-mt);
+}

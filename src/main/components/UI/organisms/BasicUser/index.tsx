@@ -11,7 +11,7 @@ interface IProps {
     name: string;
     lastLogin: string;
     isPlus: boolean;
-    id: string;
+    id: number;
 }
 
 export const BasicUser = (props: IProps) => {

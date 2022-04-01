@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { IRootState, TUserDict } from "../../../store/modules/types";
 import { fetchUserAction } from "../../../store/modules/user/actions";
 import { IUser, IUserSummary, TStatus } from "../../../types";
@@ -14,6 +14,7 @@ interface IStateProps {
 export const useUser = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
+    const navigate = useNavigate();
     const profileSelector = useSelector(
         (state: IRootState) => state.fetchUserReducer
     );
@@ -43,18 +44,21 @@ export const useUser = () => {
     };
 
     React.useEffect(() => {
-        let summary: IUserSummary | null = null;
+        const summary: IUserSummary | null =
+            searchSelector.result?.items.find(
+                (user) => user.id === Number(id)
+            ) ?? null;
 
-        if (profileSelector.status === "success") {
-            summary =
-                searchSelector.result?.items.find((user) => user.id === id) ??
-                null;
+        if (!summary) {
+            return navigate("/");
         }
 
         setAppState((state) => ({
             ...state,
             status: profileSelector.status,
-            user: profileSelector.result,
+            user: profileSelector.result?.length
+                ? profileSelector.result[0]
+                : null,
             summary,
         }));
     }, [profileSelector.status]);
