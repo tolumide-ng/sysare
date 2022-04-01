@@ -6,9 +6,8 @@ import { IRootState } from "../../../store/modules/types";
 import { ISearchUsers, TStatus } from "../../../types";
 
 interface IStateProps {
-    searchText: string;
     status: TStatus;
-    result: ISearchUsers | [];
+    result: ReadonlyArray<ISearchUsers> | [];
     fetchMore: boolean;
 }
 
@@ -16,15 +15,14 @@ export const useSearch = () => {
     const dispatch = useDispatch();
     const searchSelector = useSelector((state: IRootState) => state.fetchSearchReducer);
     const [appState, setAppState] = React.useState<IStateProps>({
-        searchText: "",
         status: "rest",
         result: [],
         fetchMore: false,
     });
 
 
-    const getSearch = async (text: string) => {
-        setAppState(state => ({...state, status: "loading", result: [], fetchMore: false }));
+    const getSearch = async () => {
+        setAppState(state => ({...state, status: "loading", }));
         useFetch({
             dispatch,
             request: fetchSearchAction,
@@ -37,21 +35,13 @@ export const useSearch = () => {
         });
     }
 
-    const getMoreSearch = async () => {
-        setAppState(state => ({...state, status: "loading", fetchMore: true }));
-
-        useFetch({
-            dispatch,
-            request: fetchSearchAction,
-            method: "GET",
-            path: "/search",
-            payload: {},
-        });
-    }
-
     useEffect(() => {
         if(appState.result) {
-            setAppState(state => ({...state, status: searchSelector.status, result: searchSelector.result}));
+            setAppState(state => ({
+                ...state, 
+                status: searchSelector.status, 
+                result: [...state.result, ...searchSelector.result]
+            }));
         }
     }, [searchSelector.status]);
 
@@ -59,6 +49,5 @@ export const useSearch = () => {
     return {
         appState,
         getSearch,
-        getMoreSearch,
     }
 }

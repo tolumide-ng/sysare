@@ -5,11 +5,10 @@ import style from "./index.module.css";
 
 export const Search = () => {
     const { search } = useParams();
-    const {getSearch, getMoreSearch, appState} = useSearch();
+    const {getSearch, appState} = useSearch();
 
     React.useMemo(() => {
-        console.log("the SEARCH TERM>>>>>>>>>>>>>>", search);
-        getSearch(search as string);
+        getSearch();
     }, [search]);
 
 
