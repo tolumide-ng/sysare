@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useFetch } from "../../../hooks/useFetch";
 import { fetchSearchAction } from "../../../store/modules/search/actions";
@@ -8,7 +8,6 @@ import { IUserSummary, TStatus } from "../../../types";
 interface IStateProps {
     status: TStatus;
     result: ReadonlyArray<IUserSummary> | [];
-    fetchMore: boolean;
 }
 
 export const useSearch = () => {
@@ -19,7 +18,6 @@ export const useSearch = () => {
     const [appState, setAppState] = React.useState<IStateProps>({
         status: "rest",
         result: [],
-        fetchMore: false,
     });
 
     const getSearch = async () => {
@@ -36,7 +34,7 @@ export const useSearch = () => {
         });
     };
 
-    useEffect(() => {
+    React.useEffect(() => {
         setAppState((state) => ({
             ...state,
             status: searchSelector.status,

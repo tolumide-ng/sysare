@@ -8,7 +8,7 @@ import {
 export interface IFetchUserState {
     readonly error: string | null;
     readonly status: TStatus;
-    readonly result: Record<string, IUser> | null; // we would be caching a profile if it has been fetched earlier and the page has not been refreshed
+    readonly result: IUser | null; // we would be caching a profile if it has been fetched earlier and the page has not been refreshed
 }
 
 export interface IFetchUserPendingAction {

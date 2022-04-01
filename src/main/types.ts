@@ -43,16 +43,33 @@ export interface ISearchUsers {
 
 export interface IUser {
     id: string;
+    is_plus: boolean;
     location: {
         name: string;
         distance: number;
+        area: string;
+        city: string;
+        country: string;
     };
     headline: string;
     personal: {
         age: number;
-        // ...
+        body_hair: string;
+        body_type: string;
+        ethnicity: string;
+        eye_color: string;
+        height: {
+            cm: number;
+        };
+        relationship: string;
+        smoker: string;
+        weight: {
+            kg: number;
+        };
     };
     sexual: {
         anal_position: string;
+        safer_sex: string;
+        sm: string;
     };
 }
