@@ -1,5 +1,4 @@
 import React from "react";
-
 import style from "./index.module.css";
 import {
     formatLoginStatus,
@@ -27,7 +26,9 @@ const Component = (props: IProps) => {
                 >
                     {formatLoginStatus(props.status)}
                 </div>
-                <p className={style.biTime}>{lastSeen(props.lastLogin)}</p>
+                <p className={style.biTime}>
+                    About {lastSeen(props.lastLogin)}
+                </p>
             </div>
         </div>
     );

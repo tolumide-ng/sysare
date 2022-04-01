@@ -4,9 +4,6 @@
     --fig-mb: 5rem;
     --figs-per-col: 4;
     --img-w: 100%;
-    /* --img-exact-w: calc(
-        calc(100% / 4) - calc(var(--home-col-gap) * var(--figs-per-col))
-    ); */
 
     width: var(--fig-w);
     max-width: var(--fig-w);
@@ -37,7 +34,12 @@
 
 @media screen and (max-width: 745px) {
     .bUser {
-        --fig-w: calc(100% / 3.1);
-        --fig-h: 14rem;
+        --fig-w: calc(100% / 2.5);
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .bUser {
+        --fig-w: 18.75rem;
     }
 }
