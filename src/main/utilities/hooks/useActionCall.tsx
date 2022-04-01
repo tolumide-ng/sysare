@@ -1,4 +1,4 @@
-import { ForAxiosDefs } from "../../commonTypes";
+import { ForAxiosDefs } from "../../types";
 
 interface MakeCallDef {
     dispatch: any;

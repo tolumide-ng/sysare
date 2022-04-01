@@ -19,7 +19,7 @@ export function LoadImg(props: LoadImgDef) {
         <picture className={props.loadPictureClass}>
             <source
                 media="(max-width: 745px)"
-                srcSet={props.loadImgMob}
+                srcSet={props.loadImgMob ?? props.loadImg}
                 className={props.loadClass}
             />
 

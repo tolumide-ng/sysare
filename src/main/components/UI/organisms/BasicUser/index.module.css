@@ -1,0 +1,43 @@
+.bUser {
+    --fig-w: calc(100% / 4.4);
+    --fig-h: 18.75rem;
+    --fig-mb: 5rem;
+    --figs-per-col: 4;
+    --img-w: 100%;
+    /* --img-exact-w: calc(
+        calc(100% / 4) - calc(var(--home-col-gap) * var(--figs-per-col))
+    ); */
+
+    width: var(--fig-w);
+    max-width: var(--fig-w);
+    margin-bottom: var(--fig-mb);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bUserImg {
+    max-width: var(--img-w);
+    height: var(--fig-h);
+    /* border: 3px solid green; */
+    object-fit: cover;
+}
+
+.bUserCaption {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+    .bUser {
+        --fig-w: calc(100% / 3.1);
+    }
+}
+
+@media screen and (max-width: 745px) {
+    .bUser {
+        --fig-w: calc(100% / 3.1);
+        --fig-h: 14rem;
+    }
+}

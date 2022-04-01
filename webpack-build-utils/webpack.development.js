@@ -1,5 +1,7 @@
 const path = require("path");
 
+require("dotenv").config();
+
 module.exports = {
   mode: "development",
   devtool: "source-map",
@@ -8,6 +10,9 @@ module.exports = {
       disableRoot: true,
     },
     port: 5050,
+    proxy: {
+      '/api': process.env.PROXY_URL,
+    }
   },
   output: {
     filename: "[name].bundle.js",
