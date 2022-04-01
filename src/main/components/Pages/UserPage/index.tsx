@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import { DetailedUser } from "../../UI/organisms/DetailedUser";
 import { useUser } from "./index.hook";
 import style from "./index.module.css";
@@ -12,6 +13,9 @@ export const UserPage = () => {
 
     return (
         <article className={style.up}>
+            <Link to={"/"} className={style.upBack}>
+                Go back
+            </Link>
             {appState.user && appState.summary ? (
                 <>
                     <DetailedUser

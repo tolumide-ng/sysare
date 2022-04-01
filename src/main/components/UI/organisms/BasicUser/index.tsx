@@ -14,7 +14,7 @@ interface IProps {
     id: number;
 }
 
-export const BasicUser = (props: IProps) => {
+const Component = (props: IProps) => {
     return (
         <Link to={`/user/${props.id}`} className={style.bUser}>
             <figure className={""}>
@@ -35,3 +35,5 @@ export const BasicUser = (props: IProps) => {
         </Link>
     );
 };
+
+export const BasicUser = React.memo(Component);

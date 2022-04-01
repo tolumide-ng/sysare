@@ -1,11 +1,10 @@
 import * as React from "react";
-import { useParams } from "react-router";
 import { BasicUser } from "../../UI/organisms/BasicUser";
 import { useSearch } from "./index.hook";
 import style from "./index.module.css";
 
 export const Search = () => {
-    const { getSearch, appState } = useSearch();
+    const { getSearch, appState, stopFetching, loadRef } = useSearch();
 
     React.useMemo(() => {
         getSearch();
@@ -36,6 +35,12 @@ export const Search = () => {
                     )
                 )}
             </article>
+            <div className={style.homeWatcher} ref={loadRef}></div>
+            {!stopFetching && appState.result.length ? (
+                <div className="">LOADING MORE!!</div>
+            ) : (
+                <></>
+            )}
         </article>
     );
 };

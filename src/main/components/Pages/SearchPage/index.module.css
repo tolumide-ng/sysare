@@ -31,7 +31,12 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* column-gap: var(--home-col-gap); */
     justify-content: space-evenly;
-    /* border: 4px solid red; */
+    min-height: 100vh;
+}
+
+.homeWatcher {
+    width: 100%;
+    height: 40px;
+    background: 5px solid red;
 }

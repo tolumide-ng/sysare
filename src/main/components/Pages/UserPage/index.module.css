@@ -1,9 +1,14 @@
 .up {
-    --up-mt: 0rem;
+    --up-mt: 4rem;
     height: 90vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: var(--up-mt);
+    flex-direction: column;
+}
+
+.upBack {
+    margin-bottom: 3rem;
 }
