@@ -69,3 +69,23 @@
     grid-column: 1 / 5;
     border-bottom: none;
 }
+
+@media screen and (max-width: 430px) {
+    .duFigCap {
+        display: flex;
+        flex-direction: column;
+    }
+    .duFigCapName {
+        border-bottom: 0;
+        border-top: 0;
+    }
+
+    .duFigCapName,
+    .duFigCapTime {
+        border-right: 0;
+    }
+
+    .duFigCap * {
+        padding: 0.5rem;
+    }
+}

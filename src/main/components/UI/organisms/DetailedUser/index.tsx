@@ -38,7 +38,7 @@ export const DetailedUser = (props: IProps) => {
                 <figcaption className={style.duFigCap}>
                     <div className={style.duFigCapName}>{props.name}</div>
                     <div className={style.duFigCapAge}>
-                        Age: {props.age} years
+                        {props.age} years old
                     </div>
                     <div
                         className={style.duFigCapAddress}

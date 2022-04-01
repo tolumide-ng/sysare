@@ -24,6 +24,11 @@
     }
 }
 
+@media screen and (max-width: 430px) {
+    :root {
+    }
+}
+
 @media screen and (max-width: 343px) {
     :root {
     }
