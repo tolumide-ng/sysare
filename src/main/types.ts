@@ -19,18 +19,17 @@ export type ForAxiosDefs =
     | "UNLINK"
     | undefined;
 
-
 export type TStatus = "rest" | "loading" | "failure" | "success";
 
 export interface IUserSummary {
     id: string;
     is_plus: boolean;
-    last_login: string;
-    name: string;
-    online_status: string;
-    picture: {
-        comment: string;
-        url: string;
+    last_login: string; // top right (minutes/days/e.t.c ago)
+    name: string; // right after the online status on (top left)
+    online_status: string; // top left
+    picture?: {
+        comment: string; // right under the image
+        url: string; // main item
     };
 }
 
@@ -39,7 +38,7 @@ export interface ISearchUsers {
         after: string;
     };
     total: number;
-    items: ReadonlyArray<IUserSummary>
+    items: ReadonlyArray<IUserSummary>;
 }
 
 export interface IUser {

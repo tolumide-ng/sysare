@@ -1,0 +1,25 @@
+.biInfo {
+    width: 100%;
+}
+
+.biUser {
+    text-align: start;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.biOnline {
+    color: var(--color-green-online);
+}
+
+.biOffline {
+    color: var(--color-red-offline);
+}
+
+.biDetail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.biTime {
+}

@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Route, Routes, } from "react-router";
+import { Route, Routes } from "react-router";
 import ErrorBoundary from "../../components/Pages/ErrorBoundary";
 import { Search } from "../../components/Pages/SearchPage";
 import { LoadingPage } from "../../components/Pages/LoadingPage";
@@ -27,7 +27,7 @@ const AppRouter = () => {
                 <ErrorBoundary>
                     <Suspense fallback={<LoadingPage />}>
                         <Routes>
-                            <Route path="/:search" element={<Search />} />
+                            <Route path="/" element={<Search />} />
                             {/* <Route path="/" /> */}
                         </Routes>
                     </Suspense>

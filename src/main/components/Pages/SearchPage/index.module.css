@@ -21,3 +21,17 @@
     padding-right: var(--ldpg-r-pr);
     padding-left: var(--ldpg-r-pl);
 }
+
+.home {
+    --home-gap: 0.2rem;
+    margin-top: 3rem;
+}
+
+.homeCont {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* column-gap: var(--home-col-gap); */
+    justify-content: space-evenly;
+    /* border: 4px solid red; */
+}
