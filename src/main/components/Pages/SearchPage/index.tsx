@@ -36,6 +36,11 @@ export const Search = () => {
                 )}
             </article>
             <div className={style.homeWatcher} ref={loadRef}></div>
+            {!stopFetching && appState.result.length ? (
+                <div className="">LOADING MORE!!</div>
+            ) : (
+                <></>
+            )}
         </article>
     );
 };
