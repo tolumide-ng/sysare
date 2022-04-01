@@ -4,7 +4,7 @@ import {FETCH_SEARCH_PENDING, FETCH_SEARCH_FAILURE, FETCH_SEARCH_SUCCESS} from "
 export interface IFetchSearchState {
     readonly error: string | null;
     readonly status: TStatus;
-    readonly result: ISearchUsers | [];
+    readonly result: ReadonlyArray<ISearchUsers> | [];
 }
 
 export interface IFetchSearchPendingAction {
