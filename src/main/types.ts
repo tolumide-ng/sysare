@@ -19,7 +19,7 @@ export type ForAxiosDefs =
     | "UNLINK"
     | undefined;
 
-export type TStatus = "rest" | "loading" | "failure" | "success";
+export type TStatus = "rest" | "loading" | "failure" | "success" | "loadmore";
 
 export interface IUserSummary {
     id: number;
@@ -34,7 +34,7 @@ export interface IUserSummary {
 }
 
 export interface ISearchUsers {
-    cursor: {
+    cursors: {
         after: string;
     };
     total: number;

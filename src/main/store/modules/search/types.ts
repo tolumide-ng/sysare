@@ -3,6 +3,7 @@ import {
     FETCH_SEARCH_PENDING,
     FETCH_SEARCH_FAILURE,
     FETCH_SEARCH_SUCCESS,
+    FETCH_SEARCH_UPDATE,
 } from "./actionTypes";
 
 export interface IFetchSearchState {
@@ -26,7 +27,13 @@ export interface IFetchSearchSuccessAction {
     payload: IFetchSearchState;
 }
 
+export interface IFetchSearchUpdateAction {
+    type: typeof FETCH_SEARCH_UPDATE;
+    payload: IFetchSearchState;
+}
+
 export type TFetchSearch =
     | IFetchSearchFailureAction
     | IFetchSearchPendingAction
-    | IFetchSearchSuccessAction;
+    | IFetchSearchSuccessAction
+    | IFetchSearchUpdateAction;

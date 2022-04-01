@@ -4,7 +4,7 @@ import { useSearch } from "./index.hook";
 import style from "./index.module.css";
 
 export const Search = () => {
-    const { getSearch, appState } = useSearch();
+    const { getSearch, appState, stopFetching, loadRef } = useSearch();
 
     React.useMemo(() => {
         getSearch();
@@ -35,6 +35,7 @@ export const Search = () => {
                     )
                 )}
             </article>
+            <div className={style.homeWatcher} ref={loadRef}></div>
         </article>
     );
 };
