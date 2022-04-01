@@ -11,12 +11,12 @@ interface IProps {
     name: string;
     lastLogin: string;
     isPlus: boolean;
-    id: string;
+    id: number;
 }
 
 export const BasicUser = (props: IProps) => {
     return (
-        <Link to="/user/:id" className={style.bUser}>
+        <Link to={`/user/${props.id}`} className={style.bUser}>
             <figure className={""}>
                 <LoadImg
                     loadImg={props.image ?? ""}

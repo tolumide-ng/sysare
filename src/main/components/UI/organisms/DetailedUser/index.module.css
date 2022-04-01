@@ -1,0 +1,91 @@
+.du {
+    --du-w: min(31.25rem, 100%);
+    --du-h: 31rem;
+    --du-grid-row-h: 2.125rem;
+    --du-border-w: 2px;
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.duFig {
+    border: var(--du-border-w) solid var(--color-black);
+    width: var(--du-w);
+}
+
+.duFigCap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 2.875rem) 1fr;
+}
+
+.duFigCap * {
+    border-bottom: var(--du-border-w) solid var(--color-black);
+    display: flex;
+    align-items: center;
+    padding: 0.1rem 0.5rem;
+    line-height: 1.3rem;
+}
+
+.duImg {
+    width: var(--du-w);
+    object-fit: cover;
+    height: var(--du-h);
+}
+
+.duFigCapName {
+    grid-column: 1 / 4;
+    grid-row: 1;
+    border-right: var(--du-border-w) solid var(--color-black);
+    border-top: var(--du-border-w) solid var(--color-black);
+}
+
+.duFigCapAge {
+    grid-column: 4/5;
+    grid-row: 1;
+    border-top: var(--du-border-w) solid var(--color-black);
+}
+
+.duFigCapAddress {
+    grid-column: 1 / 5;
+    grid-row: 2;
+}
+.duFigCapTime {
+    grid-row: 3;
+    grid-column: 1 / 3;
+    border-right: var(--du-border-w) solid var(--color-black);
+}
+
+.duFigCapDistance {
+    grid-row: 3;
+    grid-column: 3 / 5;
+}
+
+.duFigCapHeadline {
+    grid-row: 4;
+    grid-column: 1 / 5;
+    border-bottom: none;
+}
+
+@media screen and (max-width: 430px) {
+    .duFigCap {
+        display: flex;
+        flex-direction: column;
+    }
+    .duFigCapName {
+        border-bottom: 0;
+        border-top: 0;
+    }
+
+    .duFigCapName,
+    .duFigCapTime {
+        border-right: 0;
+    }
+
+    .duFigCap * {
+        padding: 0.5rem;
+    }
+}

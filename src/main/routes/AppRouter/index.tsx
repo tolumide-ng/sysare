@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from "react-router";
 import ErrorBoundary from "../../components/Pages/ErrorBoundary";
 import { Search } from "../../components/Pages/SearchPage";
+import { UserPage } from "../../components/Pages/UserPage";
 import { LoadingPage } from "../../components/Pages/LoadingPage";
 import { setDropDownAction } from "../../store/modules/dropDown/actions";
 import { IRootState } from "../../store/modules/types";
@@ -28,7 +29,7 @@ const AppRouter = () => {
                     <Suspense fallback={<LoadingPage />}>
                         <Routes>
                             <Route path="/" element={<Search />} />
-                            {/* <Route path="/" /> */}
+                            <Route path="/user/:id" element={<UserPage />} />
                         </Routes>
                     </Suspense>
                 </ErrorBoundary>

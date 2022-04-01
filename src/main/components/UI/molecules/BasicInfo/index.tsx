@@ -1,9 +1,10 @@
 import React from "react";
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
-
 import style from "./index.module.css";
-dayjs.extend(relativeTime);
+import {
+    formatLoginStatus,
+    isOnline,
+    lastSeen,
+} from "../../../../utilities/common";
 
 interface IProps {
     name: string;
@@ -12,31 +13,21 @@ interface IProps {
 }
 
 const Component = (props: IProps) => {
-    console.log("mounted || rerendered?");
-
-    const isOnline = React.useCallback(
-        () => props.status.toLocaleLowerCase() === "online",
-        []
-    );
-
-    const userStatus = React.useCallback(() => {
-        // sometimes the value of status is neither online nor offline, there are scenarios where the value is `date`
-        let value = props.status.toLowerCase();
-        if (!["online", "offline"].includes(props.status.toLowerCase())) {
-            value = "offline";
-        }
-        return `${value[0].toUpperCase()}${value.slice(1)}`;
-    }, []);
-
     return (
         <div className={style.biInfo}>
             <p className={style.biUser}>{props.name}</p>
             <div className={style.biDetail}>
-                <div className={isOnline() ? style.biOnline : style.biOffline}>
-                    {userStatus()}
+                <div
+                    className={
+                        isOnline(props.status)
+                            ? style.biOnline
+                            : style.biOffline
+                    }
+                >
+                    {formatLoginStatus(props.status)}
                 </div>
                 <p className={style.biTime}>
-                    {dayjs(props.lastLogin).fromNow()}
+                    About {lastSeen(props.lastLogin)}
                 </p>
             </div>
         </div>

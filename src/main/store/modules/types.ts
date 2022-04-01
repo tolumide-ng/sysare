@@ -1,14 +1,16 @@
 import { Action } from "redux";
 import { ThunkAction } from "redux-thunk";
 import { RootStateDef } from ".";
-import { ForAxiosDefs } from "../../types";
+import { ForAxiosDefs, IUser } from "../../types";
 import { IFetchSearchState } from "./search/types";
+import { IFetchUserState } from "./user/types";
 
 export interface IRootState {
     dropDownReducer: {
         display: boolean;
     };
     fetchSearchReducer: IFetchSearchState;
+    fetchUserReducer: IFetchUserState;
 }
 
 export interface IStoreActionProps {
@@ -24,3 +26,5 @@ export type AppThunk<ReturnType = void> = ThunkAction<
     unknown,
     Action<string>
 >;
+
+export type TUserDict = Record<string, IUser> | null;
