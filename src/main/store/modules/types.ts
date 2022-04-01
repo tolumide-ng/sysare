@@ -1,7 +1,7 @@
 import { Action } from "redux";
 import { ThunkAction } from "redux-thunk";
 import { RootStateDef } from ".";
-import { ForAxiosDefs } from "../../types";
+import { ForAxiosDefs, IUser } from "../../types";
 import { IFetchSearchState } from "./search/types";
 
 export interface IRootState {
@@ -24,3 +24,5 @@ export type AppThunk<ReturnType = void> = ThunkAction<
     unknown,
     Action<string>
 >;
+
+export type TUserDict = Record<string, IUser> | null;

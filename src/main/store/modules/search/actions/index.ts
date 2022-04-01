@@ -1,6 +1,10 @@
 import { axiosCall } from "../../../../utilities/helpers/axiosCall";
 import { AppThunk, IStoreActionProps } from "../../types";
-import { FETCH_SEARCH_FAILURE, FETCH_SEARCH_PENDING, FETCH_SEARCH_SUCCESS } from "../actionTypes";
+import {
+    FETCH_SEARCH_FAILURE,
+    FETCH_SEARCH_PENDING,
+    FETCH_SEARCH_SUCCESS,
+} from "../actionTypes";
 
 export const fetchSearchPending = () => ({
     type: FETCH_SEARCH_PENDING,
@@ -11,7 +15,6 @@ export const fetchSearchPending = () => ({
     },
 });
 
-
 export const fetchSearchFailure = (error: string) => ({
     type: FETCH_SEARCH_FAILURE,
     payload: {
@@ -20,7 +23,6 @@ export const fetchSearchFailure = (error: string) => ({
         result: [],
     },
 });
-
 
 export const fetchSearchSuccess = (result: []) => ({
     type: FETCH_SEARCH_SUCCESS,
@@ -31,14 +33,15 @@ export const fetchSearchSuccess = (result: []) => ({
     },
 });
 
-
-export const fetchSearchAction = (props: IStoreActionProps): AppThunk => async (dispatch) => {
-    try {
-        dispatch(fetchSearchPending());
-        const response = await axiosCall(props);
-        dispatch(fetchSearchSuccess(response?.data));
-    } catch (error) {
-        console.log("THE ERROR RESPONSE >>>>>>>>>>>>>>", error);
-        dispatch(fetchSearchFailure(error as unknown as string))
-    }
-}
+export const fetchSearchAction =
+    (props: IStoreActionProps): AppThunk =>
+    async (dispatch) => {
+        try {
+            dispatch(fetchSearchPending());
+            const response = await axiosCall(props);
+            dispatch(fetchSearchSuccess(response?.data));
+        } catch (error) {
+            console.log("THE ERROR RESPONSE >>>>>>>>>>>>>>", error);
+            dispatch(fetchSearchFailure(error as unknown as string));
+        }
+    };
