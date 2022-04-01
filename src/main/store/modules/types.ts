@@ -4,7 +4,7 @@ import { RootStateDef } from ".";
 import { ForAxiosDefs } from "../../types";
 import { IFetchSearchState } from "./search/types";
 
-export interface RootState {
+export interface IRootState {
     dropDownReducer: {
         display: boolean;
     };

@@ -20,7 +20,7 @@ export type ForAxiosDefs =
     | undefined;
 
 
-export type TStatus = "rest" | "pending" | "failure" | "success";
+export type TStatus = "rest" | "loading" | "failure" | "success";
 export interface IUserSummary {
     id: string;
     name: string;
