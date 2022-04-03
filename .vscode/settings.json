@@ -1,5 +1,11 @@
 {
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[yaml]": {
+        "editor.autoIndent": "advanced"
+    },
+    "[dockercompose]": {
+        "editor.autoIndent": "advanced"
     }
 }

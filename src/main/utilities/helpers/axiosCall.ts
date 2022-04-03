@@ -35,6 +35,8 @@ export const axiosCall = async (props: AxiosProps) => {
 
     const url = `${process.env.BASE_URL}${props.path}`;
 
+    console.log("the url>>>>>>>>>>>>>", url);
+
     const axiosData: Config = {
         method: props.method,
         data: props.payload,
