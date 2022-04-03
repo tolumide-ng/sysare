@@ -16,7 +16,7 @@
 
 ```
 
--   Run docker compose up to start the application
+-   Run `docker compose up` to start the application
 
 Features:
 
