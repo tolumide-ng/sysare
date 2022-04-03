@@ -1,4 +1,4 @@
-## Basic React Tempate
+## SySRaE - meet people
 
 ### Requirements:
 
