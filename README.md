@@ -1,23 +1,22 @@
 ## Basic React Tempate
 
+### Requirements:
+
+1. docker compose
+
 ### How to run this application
 
-Backend:
-
--   Start the backend on the backend repository on PORT 3000
-
-Frontend:
-
 -   Clone this repository
--   install the packages using `npm i` (You would need to be using >= node v17) - I have intentions of dockerizing the entire application over the weekend
--   Create a .env file on the cloned frontend repository and add the following
+-   Cd into the cloned repository
+-   Create a `.env` file in the root directory
+-   Add the code below to the created .env file
 
 ```
-BASE_URL = "/api"
-PROXY_URL = "http://localhost:3000"
+    http://localhost:3000
+
 ```
 
--   Run the project using `npm run dev`
+-   Run docker compose up to start the application
 
 Features:
 
