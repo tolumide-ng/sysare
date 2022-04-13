@@ -12,7 +12,7 @@
 -   Add the code below to the created .env file
 
 ```
-    http://localhost:3000
+    BASE_URL=http://localhost:3000
 
 ```
 
